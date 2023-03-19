@@ -1,0 +1,18 @@
+open shell
+->python manage.py shell
+
+check shell
+->print('hello')
+
+import class
+->from first_app.models import Topic
+
+check data
+->print(Topic.objects.all())
+
+create new
+->t = Topic(top_name="Social Network")
+->t.save()
+
+exit
+->quit()
