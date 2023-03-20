@@ -28,14 +28,20 @@
     <nav class="navbar navbar-expand-lg bg-light techfont">
       <div class="container">
         <div class="navbar-nav align-items-center">
-          
+          <a class="navbar-brand bigbrand" href="{% url 'post_list' %}">My Tech blog</a>
           <a class="nav-item nav-link" href="{% url 'about' %}">About</a> 
           <a class="nav-item nav-link" href="https://www.github.com">Github</a>
           <a class="nav-item nav-link" href="https://www.linkedin.com">LinkedIn</a>
         </div>
         <div class="navbar-nav align-items-center ml-auto">
           {% if user.is_authenticated %}
+            <a class="nav-item nav-link" href="{% url 'post_new' %}">New Post</a>
+            <a class="nav-item nav-link" href="{% url 'post_draft_list' %}">Drafts</a>
+            <a class="nav-item nav-link" href="{% url 'logout' %}">Log out</a>
+            <a >Welcome: {{ user.username }}</a>
           {% else %}
+            <a class="nav-item nav-link" href="{% url 'login' %}" aria-label="Login">
+              <span class="fa fa-user" aria-hidden="true"></span></a>
           {% endif %}
         </div>
       </div>
